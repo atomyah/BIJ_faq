@@ -1,0 +1,116 @@
+<body class="myContainerMain">
+<div class="container">
+        <h1>{{title}}</h1>
+        <br>
+        
+        <ais-instantsearch [config]="searchConfig">
+          <div class="boxContainer">
+            <div class="box">
+              <label name="Algolia"></label>
+                <span style="font-size: small;">
+                  入力後<i class="material-icons">search</i>をクリックで検索<i class="material-icons">clear</i>をクリックでリセット
+                </span>
+                <ais-search-box placeholder="質問フォーラム内検索" [searchAsYouType]="false">
+                </ais-search-box>
+            </div>
+            <br><br>
+            <div class="box">
+              <ais-pagination padding="2"></ais-pagination>
+            </div>
+          </div>
+           <br>
+           <div class="box" style="text-align: right;">
+            <a pageScroll href="#abc"><i class="material-icons">comment</i><span style="color:slateblue;">投稿フォームへ</span></a>
+          </div>
+            <ais-hits>
+                <ng-template let-hits="hits">
+                    <div *ngFor="let hit of hits">
+                        <div *ngIf="hit.userName !== '管理人'">
+                              <div class="media-body pre-wrap">
+                                <div class="media-heading-user">
+                                  投稿者：　<ais-highlight attribute="userName" [hit]="hit"></ais-highlight>
+                                </div>
+                                <br>
+                                  コメント：　<ais-highlight attribute="message" [hit]="hit"></ais-highlight>
+                                <br>
+                                  <div style="text-align:right; font-size: smaller">
+                                    日付：　<ais-highlight attribute="created" [hit]="hit"></ais-highlight>
+                                    投稿ID: <ais-highlight attribute="objectID" [hit]="hit"></ais-highlight>
+                                  </div>
+                              </div>
+                        </div>
+                        <div *ngIf="hit.userName == '管理人'">
+                              <div class="media-body pre-wrap">
+                                <div class="media-heading-admin">
+                                  投稿者：　<ais-highlight attribute="userName" [hit]="hit"></ais-highlight>
+                                </div>
+                                <br>
+                                  コメント：　<ais-highlight attribute="message" [hit]="hit"></ais-highlight>
+                                <br>
+                                  <div style="text-align:right; font-size: smaller">
+                                    日付：　<ais-highlight attribute="created" [hit]="hit"></ais-highlight>
+                                    投稿ID: <ais-highlight attribute="objectID" [hit]="hit"></ais-highlight>
+                                  </div>
+                              </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ais-hits>
+        </ais-instantsearch>
+
+        <br>
+
+        <span id="abc" style="margin-bottom: 100px"></span>
+        <i class="material-icons">comment</i>投稿フォーム
+        
+        <div *ngIf="(user | async) || {} as user">  
+          <div *ngIf="user.uid; else notLoggedIn" class="media-body">
+             <form [formGroup]="commentForm" (ngSubmit)="savePost()" #faqform="ngForm">       
+                <mat-form-field>
+                       <mat-label>名前</mat-label>
+                         <input matInput placeholder="ハンドルネーム" formControlName="userName" required>
+               </mat-form-field>
+               <br>
+               <mat-form-field>
+                       <mat-label>コメント</mat-label>
+                         <textarea class="textarea" matInput cdkTextareaAutosize cdkAutosizeMaxRows="100" cdkAutosizeMinRows="10" placeholder="※ 各自の症状や服薬歴などに対して推測や助言はできません。わたしの回答はあくまで一般論での回答となります。 ご自分にあてはまるかどうか必ず自己責任のもとご判断ください" formControlName="message" required></textarea>
+               </mat-form-field>
+               <br>
+                    <button type="submit" mat-flat-button color="accent" [disabled]="faqform.invalid">投稿</button>
+            </form>
+            <p>
+            </p>
+            <p>投稿が終わったらログアウトボタンをクリックしてログアウトしてください</p>
+              <button mat-flat-button color="primary" (click)="logout()">ログアウト</button>
+          </div>
+          <ng-template #notLoggedIn>
+              <!-- 認証されていない場合 -->
+            <div class="media-body">
+              <p style="margin: 0 auto;">書き込みする場合はサインイン（認証作業）してください。下の黄色いボタン[Continue as guest]を
+              ワンクリックするだけで投稿可能となります。</p>
+              <firebase-ui>
+                  (signInSuccessWithAuthResult)="successCallback($event)"
+                  (signInFailure)="errorCallback($event)">
+              </firebase-ui>
+            </div>
+          </ng-template>
+        </div>
+        
+        
+        <br><br><hr><br>
+        
+        <div class="media-body">
+              <h2>投稿方法</h2>
+              <p>とても簡単な作業ですが投稿に必要なサインインの作業方法を説明します。
+                この作業は<strong>スパム投稿の防止と管理人の承認作業の省略</strong>のために導入しました。</p>
+                基本的にはContinue as guestという黄色のボタンをクリックするだけで投稿可能になります。何も入力する必要はありません。
+                ゲスト認証と呼ばれます。
+                <br><img src='../../../assets/images/Forum_button2.png' alt="ベンゾ質問フォーラムログインボタン" width="200px"><br>
+                クリック後、入力フォームが出現しますのでそのまま投稿してください。<br>
+                <br>入力し[投稿]ボタンをクリックですぐに反映されます。終りましたら[ログアウト]ボタンをクリックしてログアウト。
+                <br><br>【おわり】
+                <br>
+        </div>
+        <p></p>
+</div>
+</body>

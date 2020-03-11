@@ -1,0 +1,77 @@
+.pre-wrap {
+    white-space: pre-wrap; 
+}
+
+.box{
+  display: inline-block;
+  font-size: small;
+}
+
+/* 検索ボックス、ページネーションなどの枠 */
+.boxContainer{
+  font-size: small;
+  background-color:white;
+}
+
+
+/* 全体の大枠 */
+.container{
+  font-size:medium;
+  padding: 10px;
+  margin: 0 10px; // 横幅に隙間を作った
+  background-color:white;
+  border-radius: 5px;
+  word-break: break-all;
+}
+
+
+.resizeimage img { width: 100%; }
+
+mat-form-field {
+  width: 100%;
+}
+
+.example-form-field {
+  width: 200px;
+}
+
+/* マテリアルアイコンの下ぞろえ　https://studio-key.com/2053.html */
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 0.8;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+  
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/* algolia表示部分 */
+.media-body {
+  padding: 10px;
+  background-color: rgb(252, 252, 252);
+  border-radius: 5px;
+  font-size: 15px;
+  word-break: break-all;
+  margin-bottom: 10px;
+  border: 1px;
+  border-style: solid;
+}
+
+.media-heading-admin {
+  color: goldenrod;
+  font-size: 13px;
+}
+
+.media-heading-user {
+  color: darkblue;
+  font-size: 13px;
+}

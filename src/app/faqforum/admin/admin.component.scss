@@ -1,0 +1,62 @@
+.post-box {
+    border: gray solid 2px;
+    padding: 1em;
+    width: 80%;
+}
+
+
+.user-box {
+    border: 0px;
+    min-height: 100px;
+    padding: 10px;
+    margin-bottom: 20px;
+    word-break: break-all;
+    border-radius: 20px;
+    background-color:ghostwhite;
+  }
+
+  .admin-box {
+    border: 0px;
+    min-height: 100px;
+    padding: 10px;
+    word-break: break-all;
+    border-radius: 20px;
+    background-color:floralwhite;
+    margin-bottom: 20px;
+  }
+
+.pre-wrap {
+    white-space: pre-wrap; 
+}
+
+.box{
+  display: inline-block;
+  font-size: small;
+}
+
+.boxContainer{
+  font-size: small;
+  background-color:white;
+}
+
+
+/* 全体の大枠 */
+.container{
+  font-size:medium;
+  padding: 10px;
+  margin: 0 10px; // 横幅に隙間を作った
+  background-color:white;
+  border-radius: 5px;
+  word-break: break-all;
+}
+
+
+.resizeimage img { width: 100%; }
+
+mat-form-field {
+  width: 100%;
+}
+
+.example-form-field {
+  width: 200px;
+}

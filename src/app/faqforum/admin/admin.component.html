@@ -1,0 +1,59 @@
+<body class="myContainerMain">
+    <div class="container">
+            <h1>{{title}}</h1>
+            <br>
+           
+            <div>
+            
+            <div class="boxContainer">
+              <div class="box">
+                  <!--ページネーション↓-->
+              <mat-paginator [length]="length"
+              [pageSize]="perPage"
+              [pageSizeOptions]="[10, 50, 100]"
+              (page)="getPaginatorData($event)" 
+              [showFirstLastButtons]="true"
+              style="font-size: small;"
+              >
+              </mat-paginator>
+              </div>
+            </div>
+            
+              <div style="display:inline-block;" *ngFor="let post of posts | async | slice: lowValue : highValue">
+                  <div *ngIf="post.uid !== 'IvUOuDzmWNTBuicD0XhsQqzfAFY2' && post.uid !== 'pIomaFBT4BPcVhAhcxYpHL3syfu1'">
+                    <div class="user-box pre-wrap">
+                    <p>名前：{{ post.userName }}</p>
+                    <p [innerHTML]="post.message"></p> <!--safe.pipe効かない…？？？-->
+                    <p style="text-align:right; font-size: smaller">投稿No.{{ post.id }}</p>
+                    <p style="text-align:right; font-size: smaller">投稿日時：{{ post.created }}</p>
+                    <p style="text-align:right; font-size: smaller; visibility:hidden">UID: {{post.uid}}</p> <!--visiblity:hiddenを外せば表示される-->
+                        <div *ngIf="(user | async) || {} as user">
+                          <p *ngIf="user.uid == 'pIomaFBT4BPcVhAhcxYpHL3syfu1'">
+                              <button mat-raised-button (click)="openDialogE(post)">編集</button>
+                              <button mat-raised-button (click)="deletePost(post)">削除</button>
+                              <button mat-raised-button (click)="openDialogR(post)">返信</button>
+                          </p>
+                        </div>
+                    </div>
+                  </div>
+                  <div *ngIf="post.uid == 'IvUOuDzmWNTBuicD0XhsQqzfAFY2' || post.uid == 'pIomaFBT4BPcVhAhcxYpHL3syfu1'">
+                      <div class="admin-box pre-wrap">
+                      <p>名前：{{ post.userName }}</p>
+                      <p [innerHTML]="post.message"></p> <!--safe.pipe効かない…？？？-->
+                      <p style="text-align:right; font-size: smaller">投稿No.{{ post.id }}</p>
+                      <p style="text-align:right; font-size: smaller">投稿日時：{{ post.created }}</p>
+                      <p style="text-align:right; font-size: smaller; visibility:hidden">UID: {{post.uid}}</p>
+                        <div *ngIf="(user | async) || {} as user">
+                          <p *ngIf="user.uid == 'pIomaFBT4BPcVhAhcxYpHL3syfu1'">
+                              <button mat-raised-button (click)="openDialogE(post)">編集</button>
+                              <button mat-raised-button (click)="deletePost(post)">削除</button>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+            </div>
+            
+            <button mat-flat-button color="primary" (click)="logout()">ログアウト</button>
+    </div>
+    </body>

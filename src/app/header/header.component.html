@@ -1,0 +1,35 @@
+<!--ヘッダ-->
+<mat-toolbar
+    color="primary"
+    style="position:fixed;top:0;left:0;height:fit-content;width: 100%; background: primary; 
+     box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);z-index: 2;"
+>
+    <!--上のbox-shadowはmat-toolbarの下に影をつけている。-->
+
+
+<!--PC用1段目toolba-row-->
+  <!-- div fxShow="true" fxHide.lt-sm="true" -->
+    <mat-toolbar-row class="mat-toolbar-row-word-wrap" color=""><!--mat-toolbar-row-word-wrapのCSSはroot.component.cssを参照。コンテンツを自動で枠内で折り返す-->
+
+  <!--ヘッダータイトルとベンゾインフォジャパンの表示-->
+  <!--1列のmat-toolbarで右寄りになってしまう文字列を適度な位置にする方法：class="fill-remaining-space"のCSSにはflex: 1 1 auto;とする-->
+        <a href="https://benzoinfojapan.org/" alt="ベンゾジアゼピン情報センターホームアイコン" target="_blank"><button mat-button><mat-icon style="color: white;">home</mat-icon></button></a>
+        <a href="https://benzoinfojapan.org/" alt="ベンゾジアゼピン情報センターテキストリンク" target="_blank"><span style="color: white;">ベンゾジアゼピン情報センター</span></a>
+    <span fxShow="true" fxHide.lt-sm="true">
+          <span style="font-size:medium; margin-left:30px; margin-right: 50px">質問フォーラムページ</span>
+          <span class="fill-remaining-space"></span>
+          <span fxShow="true" fxHide.lt-md="true" style="font-size:small;margin-left:250px;">ベンゾインフォジャパン</span>
+    </span>
+
+    </mat-toolbar-row>
+
+</mat-toolbar>
+  
+
+
+<!--コンテンツ挿入場所。上ヘッダー部分70pxあける-->
+  <div style="position:absolute;top:70px;left:0px; width: 100%; max-width:1024px;">
+    <!--↓メインコンテンツ-->
+    <router-outlet></router-outlet>
+  </div>
+

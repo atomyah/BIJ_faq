@@ -1,0 +1,111 @@
+/*複数のコンポーネントで共通利用*/
+.myContainerMain {
+    color:black;
+    line-height: 150%;
+    font-size: medium;
+    font-weight: normal;
+    font-display: auto;
+    font-family: verdana, -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    width: 99%;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    position: static;
+    box-sizing: border-box;
+    max-width: 1024px;
+    border:none;
+  }
+  
+  .myContainerMain h1{
+    color:black;
+    font-family: "游ゴシック", "YuGothic", "メイリオ", meiryo, sans-serif;
+    font-weight: 500;
+    font-size: 120%;
+  }
+  
+  .myContainerMain h2{
+    color:black;
+    font-family: "游ゴシック", "YuGothic", "メイリオ", meiryo, sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+  }
+  
+  /* 全体の大枠 */
+  .container{
+    font-size:medium;
+    padding: 10px;
+    margin: 0 10px; // 横幅に隙間を作った
+    background-color:white;
+    border-radius: 5px;
+    word-break: break-all;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .myRed {
+    color: red;
+  }
+  
+  .myClickableIcon {
+    cursor: pointer;
+    font-weight: bold
+  }
+  
+  .myCenterLayout {
+    margin: 1rem auto 1rem auto;
+  }
+  
+  .myFlexGrow {
+    flex-grow: 1;
+  }
+  
+  .myFullWidth {
+    width: 100%;
+  }
+  
+  .my90Width {
+    width: 90%;
+  }
+  
+  .myTextCenter {
+    text-align: center;
+  }
+  
+  .myToolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 56px;
+    width: 100%;
+    z-index: 2;
+    max-width: 640px;
+  }
+  
+  .my1RemMargin {
+    margin: 1rem auto 1rem auto;
+  }
+  
+  .my2RemMargin {
+    margin: 2rem auto 2rem auto;
+  }
+  
+  .myTextLarge {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .myBackButton {
+    display: inline;
+    font-size: 4rem;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  
+  

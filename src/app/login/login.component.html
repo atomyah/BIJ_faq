@@ -1,0 +1,23 @@
+<div class="myContainerMain">
+ <div  class="container">
+    <h1>管理者ログイン画面</h1>
+    <div>
+   
+        <mat-form-field>
+            <input matInput type="email" placeholder="Email" #userEmail required autofocus>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" #userPassword required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        
+        
+        <br>
+        <button mat-flat-button color="accent" (click)="login(userEmail.value, userPassword.value)">Login</button>
+
+    </div>
+ </div>
+</div>

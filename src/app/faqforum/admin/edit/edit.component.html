@@ -1,0 +1,25 @@
+<div class="myContainerMain">
+<p>投稿者：{{data.userName}}のメッセージ編集</p>
+<p>投稿No：{{data.id}}</p>
+<div class="post-box">
+    <form [formGroup]="commentForm" #f="ngForm" style="width: 100%;" (ngSubmit)="updatePost(data)" name="form">  
+              <input placeholder="ハンドルネーム"
+               formControlName="userName"
+               value="{{data.userName}}" 
+               required>
+        <p></p>
+                <textarea 
+                class="textarea" 
+                rows="20" cols="100"
+                width="100%" placeholder="コメント" 
+                name="message" formControlName="message"
+                value="{{data.message}}"
+                required></textarea>
+        <br>
+      <button type="submit" mat-raised-button color="primary">更新</button>
+   </form>
+   <br>
+   <!--formの外に出さないと、なぜか(ngSubmit)が効いてupdatePostしてしまう-->
+   <button mat-raised-button (click)="onClickCloseButton()">閉じる</button>
+</div>
+</div>

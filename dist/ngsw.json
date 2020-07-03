@@ -1,0 +1,84 @@
+{
+  "configVersion": 1,
+  "timestamp": 1593159326971,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.bd8c5b9f7a02cb814242.js",
+        "/main-es5.bd8c5b9f7a02cb814242.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.92dabac1b77aec64e9a8.js",
+        "/polyfills-es5.35114556552526910065.js",
+        "/runtime-es2015.c5fa8325f89fc516600b.js",
+        "/runtime-es5.c5fa8325f89fc516600b.js",
+        "/styles.61782a28614726e909ac.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/Forum_button2.png",
+        "/assets/images/flower-avatar.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/Forum_button2.png": "73f872cf944d3ac147724bc029537cd25c182af7",
+    "/assets/images/flower-avatar.jpg": "66bfe623575fc01653eae831c1711fd9ccac88b3",
+    "/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/index.html": "46ac80443c2ce68340457f8af5d0748d620d43c0",
+    "/main-es2015.bd8c5b9f7a02cb814242.js": "b829d9d16d7ca9aab37ce79f76066e50c87d8e29",
+    "/main-es5.bd8c5b9f7a02cb814242.js": "0168be69f49902540d74f7c581e1bc188a0a303b",
+    "/manifest.webmanifest": "3a6750b483993996643d42841f9134070b4ef8b2",
+    "/polyfills-es2015.92dabac1b77aec64e9a8.js": "4a42496b9ffe59e9fb0d769575e232b0c9409f6f",
+    "/polyfills-es5.35114556552526910065.js": "f2bfff9e6e403193d6a66d9d8ec338b475907fb0",
+    "/runtime-es2015.c5fa8325f89fc516600b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/runtime-es5.c5fa8325f89fc516600b.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.61782a28614726e909ac.css": "0069dbb237d6295489971866f68e25137d75d838"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

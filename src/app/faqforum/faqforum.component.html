@@ -1,8 +1,17 @@
 <body class="myContainerMain">
 <div class="container">
         <h1>{{title}}</h1>
-        <br>
-        
+
+        <div class="banner">
+          <p>
+            <a href="https://www.amazon.co.jp/gp/product/B0925VD9W1/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B0925VD9W1&linkCode=as2&tag=kokkahasan-22&linkId=94f04c0b99835aaa944655bc2d852dda" target="blank" rel="noreferrer noopener">
+              『ベンゾジアゼピン薬の安全な離脱方法』（Kindle版）
+            </a>
+            発売中
+          </p>
+        </div>
+
+        <!-- 投稿表示部分はすべてAlgoliaから引っ張って表示する. -->
         <ais-instantsearch [config]="searchConfig">
           <div class="boxContainer">
             <div class="box">
@@ -57,8 +66,19 @@
                 </ng-template>
             </ais-hits>
         </ais-instantsearch>
+        <!-- ここまで -->
 
-        <br>
+        <div class="banner">
+          <p style="display: flex; align-items: center;" >
+            <a href="https://www.amazon.co.jp/gp/product/B0925VD9W1/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B0925VD9W1&linkCode=as2&tag=kokkahasan-22&linkId=94f04c0b99835aaa944655bc2d852dda" target="blank" rel="noreferrer noopener">
+              <img border="0" vertical-align="top" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=B0925VD9W1&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=kokkahasan-22" />
+            </a>
+            <a href="https://www.amazon.co.jp/gp/product/B0925VD9W1/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=B0925VD9W1&linkCode=as2&tag=kokkahasan-22&linkId=94f04c0b99835aaa944655bc2d852dda" target="blank" rel="noreferrer noopener">
+              『ベンゾジアゼピン薬の安全な離脱方法』（Kindle版）
+            </a>
+            発売中
+          </p>
+        </div>
 
         <span id="abc" style="margin-bottom: 100px"></span>
         <i class="material-icons">comment</i>投稿フォーム
